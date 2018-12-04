@@ -1,0 +1,57 @@
+// @import "./palette";
+
+.overlay {
+  background-color: rgba(gray, 1);
+}
+
+.root-color {
+  color: $root;
+}
+
+.big {
+  font-size: 2.5em;
+}
+
+.medium {
+  font-size: 1.3em;
+}
+
+.huge {
+  font-size: 3.5em;
+}
+
+.insane {
+  font-size: 5.5em;
+}
+
+.source-sans {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.merri {
+  font-family: 'Merriweather', serif;
+}
+
+.lora {
+    font-family: 'Lora', serif;
+}
+
+.alg {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.slabo {
+  font-family: 'Slabo 27px', serif;
+}
+
+.mont {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pt {
+  font-family: 'PT Sans', sans-serif;
+}
