@@ -1,20 +1,18 @@
 <template lang="html">
   <div id="home-container" class="playfair">
-    <LeftRail/>
-    <RightRail/>
+    <div class="full-width rel flex flex-centered school-photo">
+      <span class="huge school-name">St. CPMA</span>
+      <div class="stick-bottom huge up-down">
+        <i class="fa fa-angle-down"></i>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import LeftRail from './LeftRail.vue';
-  import RightRail from './RightRail.vue';
-
+require("../assets/school.jpeg")
   export default {
     name: "Home",
-    components: {
-      LeftRail,
-      RightRail
-    }
   }
 </script>
 
@@ -22,12 +20,15 @@
 #home-container {
   text-align: center;
 
-  .siderail {
-    width: 48%;
-    padding-top: 50px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
+  .school-photo {
+    background-image: linear-gradient(to top, #00000088 0%, #ffffff00 30%), url("../assets/school.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    .school-name {
+      text-shadow: $black-shadow;
+    }
   }
 }
 </style>

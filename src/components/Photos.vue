@@ -10,10 +10,6 @@
     <div class="glide__bullets" data-glide-el="controls[nav]">
       <button v-for="(photo, i) in photos" :key="i" class="glide__bullet" :data-glide-dir="'=' + i"></button>
     </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-    </div>
   </div>
 </template>
 
@@ -24,7 +20,12 @@
     name: "Photos",
     props: ["photos"],
     mounted: function () {
-      new Glide(this.$el).mount()
+      new Glide(this.$el, {
+        autoplay: 3000,
+        hoverpause: false,
+        animationTimingFunc: "ease",
+        animationDuration: 1500
+      }).mount()
     }
   }
 </script>
@@ -49,6 +50,23 @@
 
   .glide__slides {
     height: 100%;
+  }
+
+  .glide__bullet {
+    box-shadow: none;
+    border: 1px solid $text;
+  }
+
+  .glide__bullet--active {
+    background-color: $text;
+  }
+
+  .glide__arrow {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: $subtle-shadow;
   }
 
 }

@@ -1,11 +1,9 @@
 <template>
   <div id="navbar" class="mont">
     <div class="list-centered">
-      <ul class="navbar-list">
-        <li v-for="item in navItems" :key="item.text">
-          <a>
-            {{item.text}}
-          </a>
+      <ul class="navbar-list flex flex-centered flex-wrap">
+        <li v-for="item in navItems" :key="item.text" class="flex flex-centered">
+          <router-link :to="item.route">{{item.text}}</router-link>
         </li>
       </ul>
     </div>
@@ -22,28 +20,32 @@
             route: '/'
           },
           {
-            text: 'General Information',
-            route: 'general'
-          },
-          {
-            text: 'Infrastructure',
-            route: 'infrastructure'
-          },
-          {
             text: 'Academics',
-            route: 'academics'
+            route: '/academics'
           },
           {
             text: 'Activities',
-            route: 'activities'
+            route: '/activities'
           },
           {
-            text: 'Contact Us',
-            route: 'contact-us'
+            text: 'Campus',
+            route: '/campus'
           },
           {
-            text: 'Ambition',
-            route: 'ambition'
+            text: 'Faculty',
+            route: '/faculty'
+          },
+          {
+            text: 'Admissions',
+            route: '/admissions'
+          },
+          {
+            text: 'About',
+            route: '/about'
+          },
+          {
+            text: 'Contact',
+            route: '/contact'
           }
         ]
       }
@@ -53,6 +55,7 @@
 
 <style scoped lang="scss">
   #navbar {
+    background-color: $background;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -61,6 +64,8 @@
     top: 0px;
     font-size: 0.9em;
     border-bottom: 1px solid #e3e3e3;
+    position: absolute;
+    z-index: 2;
   }
 
   .list-centered {
@@ -73,8 +78,7 @@
     padding: 0;
 
     li {
-      display: inline-block;
-      height: 85px;
+      height: $nav-height;
       margin-bottom: 0;
       padding: 1em 1.25em;
       position: relative;
@@ -83,10 +87,8 @@
       a {
         position: relative;
         color: $text;
-        line-height: 85px;
         text-decoration: none;
         white-space: nowrap;
-        bottom: 10px;
         cursor: pointer;
 
         &:after {
