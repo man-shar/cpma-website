@@ -1,5 +1,7 @@
 // @import "./palette";
 
+$nav-height: 60px;
+
 .overlay {
   background-color: rgba(gray, 1);
 }
@@ -17,11 +19,11 @@
 }
 
 .huge {
-  font-size: 3.5em;
+  font-size: 5.5em;
 }
 
 .insane {
-  font-size: 5.5em;
+  font-size: 7.5em;
 }
 
 .source-sans {
@@ -54,4 +56,60 @@
 
 .pt {
   font-family: 'PT Sans', sans-serif;
+}
+
+.rel {
+  position: relative;
+}
+
+.full-width {
+  height: 100vh;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.stick-bottom {
+  position: absolute;
+  bottom: 0px;
+}
+
+.button-ish {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+
+.up-down {
+  y-transition: all 1s ease-in;
+  animation: ani 1.7s infinite;
+}
+
+@keyframes ani {
+  0% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 8px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+.black {
+  color: #000;
 }
